@@ -6,9 +6,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+<%= render "Layouts/header" %>
+  <%= yield %>
+  
+
+
   </body>
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>  
+		   document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('.sidenav');
+	    var instances = M.Sidenav.init(elems, options);
+	  });
+		   // Or with jQuery
+		$(document).ready(function(){
+	    $('.sidenav').sidenav();
+	    $(".button-collapse").sidenav();
+	  });
+		
+	</script>
 </html>
